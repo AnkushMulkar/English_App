@@ -1,4 +1,20 @@
 import streamlit as st
+import requests
+import io
+from PIL import Image
+
+
+# Set page config
+st.set_page_config(page_title="English Sentence Generator", page_icon=":smiley:", layout="wide")
+st.markdown("<h1 style='color: grey;'>Hello,folks!</h1>", unsafe_allow_html=True)
+
+
+# Render the title with the 'title' class
+st.markdown("<h1 style='color: purple;'>English Sentence Generator</h1>", unsafe_allow_html=True)
+
+st.write("The English Sentence Generator app is a simple tool that helps you create grammatically correct English sentences in no time. You can select different options for your sentence, such as voice and verb tense, using drop-down menus. Once you have made your selections, you will get your sentence. The app is great for people who want to improve their English writing skills or for those who are learning English as a second language. It is perfect for practicing grammar, writing essays, or creating sentences for social media posts. Overall, the English Sentence Generator app is an efficient and effective tool for anyone who needs to create English sentences quickly and easily.")
+
+
 
 # Dictionary of active voice verb tenses
 active_verb_tenses = {
@@ -80,15 +96,15 @@ passive_verb_tenses = {
 "Remin/remains to+be": "For most of the afternoon, sleeping remains to be done by the baby.",
 "Shall/will remain to+be": "For centuries to come, standing will remain to be done by the statue."
 }
+
 def main():
-    st.title("72 Active Voice & Passive Voive Sentences ")
     
     # Select active or passive voice
-    voice = st.selectbox("Voice:", ["Active voice", "Passive voice"], key="voice")
+    voice = st.selectbox("Select the Voice:", ["Active voice", "Passive voice"], key="voice")
 
     # Select verb tense based on voice
     if voice == "Active voice":
-        verb_tense_key = st.selectbox("Verb tense:", list(active_verb_tenses.keys()), key="verb_tense")
+        verb_tense_key = st.selectbox("Select the tense/type of sentence:", list(active_verb_tenses.keys()), key="verb_tense")
         verb_tense_value = active_verb_tenses[verb_tense_key]
     elif voice == "Passive voice":
         verb_tense_key = st.selectbox("Verb tense:", list(passive_verb_tenses.keys()), key="verb_tense")
@@ -98,7 +114,18 @@ def main():
         return
     
     # Display selected verb tense
-    st.write("Selected voive & verb :", verb_tense_value)
+    st.write("Result : <span style='color: green; font-weight: bold;'>{}</span>".format(verb_tense_value), unsafe_allow_html=True)
+    
+
+
+
+
+    # Display your image
+    img_url = 'https://drive.google.com/uc?export=view&id=1wfsvkxYtTvu26K1Ghti6lC5AOvTiOnEr'
+    st.image(img_url, caption='Ankush M.', width=150)
+    st.write("Created by [Ankush Mulkar](https://www.linkedin.com/in/ankush-mulkar-ab539454/)")
+
+    
 
 
     
