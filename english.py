@@ -31,7 +31,7 @@ active_verb_tenses = {
     "Could+v1": "He could run a mile in under six minutes when he was in college.",
     "Could have+v3": "He could have won the competetion",
     "May+v1": "You may come in if you have an appointment.",
-    "Might+v1": "He might come this morning for breakfast",
+    "Might+v1": "He might come this morning for the breakfast",
     "Might have": "She might have forgotten her keys at home",
     "Shall+v1": "I shall study regular to make good marks in final exam",
     "Should+v1": "We should start working on the project as soon as possible.",
